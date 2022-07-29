@@ -49,7 +49,8 @@ Your application project is using Java(>8) and Gradle
 #### Add the repository as a submodule of your application repository
 
 ```
-git subtree add --prefix=you-application-dir/common-document-storage https://github.com/UoM-Digital-Health-Software/common-document-storage.git main --squash
+git commit -am 'commit all your changes first'
+git subtree add --prefix=you-application-dir/your-backend-dir/common-document-storage https://github.com/UoM-Digital-Health-Software/common-document-storage.git main --squash
 ```
 Update your application repository with the submodules
 
