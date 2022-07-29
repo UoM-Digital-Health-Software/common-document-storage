@@ -67,6 +67,7 @@ git subtree pull --prefix you-application-dir/your-backend-dir/common-document-s
 ### Configure your application project to include the project
 
 Add ```include 'common-document-storage'``` in the ```settings.gradle```
+Add ```    implementation project(':common-document-storage') ``` in the ```build.gradle```
 
 ### Enable the api
 

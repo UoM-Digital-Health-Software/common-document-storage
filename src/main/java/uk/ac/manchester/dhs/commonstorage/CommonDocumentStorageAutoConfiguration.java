@@ -9,9 +9,8 @@ import uk.ac.manchester.dhs.commonstorage.repository.CommonDocumentRepository;
 import uk.ac.manchester.dhs.commonstorage.web.CommonDocumentResource;
 
 @Configuration
-@ConditionalOnProperty(name = "common.storage", havingValue = "true")
-@AutoConfigurationPackage
-@EnableJpaRepositories
+@ConditionalOnProperty(name = "common-storage", havingValue = "true")
+@EnableJpaRepositories(basePackages = "uk.ac.manchester.dhs.commonstorage")
 public class CommonDocumentStorageAutoConfiguration {
 
     @Bean
