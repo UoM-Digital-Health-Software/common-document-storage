@@ -58,6 +58,12 @@ Update your application repository with the submodules
 git submodule update --init --recursive
 ```
 
+Update submodules
+
+```
+git subtree pull --prefix you-application-dir/your-backend-dir/common-document-storage https://github.com/UoM-Digital-Health-Software/common-document-storage.git main --squash
+```
+
 ### Configure your application project to include the project
 
 Add ```include 'common-document-storage'``` in the ```settings.gradle```
