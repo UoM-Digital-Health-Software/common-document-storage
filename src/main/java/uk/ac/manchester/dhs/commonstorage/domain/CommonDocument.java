@@ -27,6 +27,9 @@ public class CommonDocument implements Serializable {
   @Column(name = "type", nullable = false)
   private String type;
 
+  @Column(name = "order", nullable = true)
+  private Integer sequence;
+
   @NotNull
   @Column(name = "content", nullable = false)
   private String content;
@@ -104,6 +107,19 @@ public class CommonDocument implements Serializable {
 
   public void setUpdateTime(Instant updateTime) {
     this.updateTime = updateTime;
+  }
+
+  public Integer getSequence() {
+    return sequence;
+  }
+
+  public void setSequence(Integer sequence) {
+    this.sequence = sequence;
+  }
+
+  public CommonDocument sequence(Integer sequence){
+    this.setSequence(sequence);
+    return this;
   }
 
   // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

@@ -22,7 +22,7 @@ Your application project is using Java(>8) and Gradle
   {
     "id": 1,
     "type": "PRIVACY_POLICY",
-    "order": 1,
+    "sequence": 1,
     "content": "xxx",
     "createTime": Instant,
     "updateTime": Instant
@@ -30,7 +30,7 @@ Your application project is using Java(>8) and Gradle
   {
     "id": 2,
     "type": "PRIVACY_POLICY",
-    "order": 2
+    "sequence": 2
     "content": "xxxx",
     "createTime": Instant,
     "updateTime": Instant
