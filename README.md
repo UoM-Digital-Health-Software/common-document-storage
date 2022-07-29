@@ -17,6 +17,26 @@ Your application project is using Java(>8) and Gradle
 #### Query by type
 
 ```Get /api/common-document-storage/common-document/type/{type}```
+``` Response 
+[
+  {
+    "id": 1,
+    "type": "PRIVACY_POLICY",
+    "order": 1,
+    "content": "xxx",
+    "createTime": Instant,
+    "updateTime": Instant
+  },
+  {
+    "id": 2,
+    "type": "PRIVACY_POLICY",
+    "order": 2
+    "content": "xxxx",
+    "createTime": Instant,
+    "updateTime": Instant
+  }
+]
+```
 
 ### Integration Steps
 
@@ -30,6 +50,11 @@ Your application project is using Java(>8) and Gradle
 
 ```
 git subtree add --prefix=you-application-dir/common-document-storage https://github.com/UoM-Digital-Health-Software/common-document-storage.git main --squash
+```
+Update your application repository with the submodules
+
+```
+git submodule update --init --recursive
 ```
 
 ### Configure your application project to include the project
