@@ -22,7 +22,7 @@ import java.util.Optional;
  * REST controller for managing {@link uk.ac.manchester.dhs.commonstorage.domain.CommonDocument}.
  */
 @RestController
-@RequestMapping("/api/common-storage")
+@RequestMapping("/api/common-document-storage")
 @Transactional
 public class CommonDocumentResource {
 
@@ -192,6 +192,17 @@ public class CommonDocumentResource {
       id
     );
     return ResponseUtil.wrapOrNotFound(commonDocument);
+  }
+
+  @GetMapping("/common-documents/type/{type}")
+  public ResponseEntity<List<CommonDocument>> getCommonDocument(
+          @PathVariable String type
+  ) {
+    log.debug("REST request to get CommonDocument by type : {}", type);
+    List<CommonDocument> commonDocuments = commonDocumentRepository.findByType(
+            type
+    );
+    return ResponseEntity.ok(commonDocuments);
   }
 
   /**
