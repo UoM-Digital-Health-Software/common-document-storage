@@ -27,7 +27,7 @@ public class CommonDocument implements Serializable {
   @Column(name = "type", nullable = false)
   private String type;
 
-  @Column(name = "order", nullable = true)
+  @Column(name = "sequence", nullable = true)
   private Integer sequence;
 
   @NotNull
