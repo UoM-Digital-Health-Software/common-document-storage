@@ -10,6 +10,8 @@ import uk.ac.manchester.dhs.commonstorage.repository.CommonDocumentRepository;
 import uk.ac.manchester.dhs.commonstorage.util.ResponseUtil;
 
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.net.URI;
@@ -172,7 +174,7 @@ public class CommonDocumentResource {
    * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of commonDocuments in body.
    */
   @GetMapping("/common-documents")
-  public List<CommonDocument> getAllCommonDocuments() {
+  public List<CommonDocument> getAllCommonDocuments(HttpServletRequest request, HttpServletResponse response) {
     log.debug("REST request to get all CommonDocuments");
     return commonDocumentRepository.findAll();
   }
@@ -185,7 +187,7 @@ public class CommonDocumentResource {
    */
   @GetMapping("/common-documents/{id}")
   public ResponseEntity<CommonDocument> getCommonDocument(
-    @PathVariable Long id
+    @PathVariable Long id, HttpServletRequest request, HttpServletResponse response
   ) {
     log.debug("REST request to get CommonDocument : {}", id);
     Optional<CommonDocument> commonDocument = commonDocumentRepository.findById(
@@ -196,7 +198,7 @@ public class CommonDocumentResource {
 
   @GetMapping("/common-documents/type/{type}")
   public ResponseEntity<List<CommonDocument>> getCommonDocument(
-          @PathVariable String type
+          @PathVariable String type, HttpServletRequest request, HttpServletResponse response
   ) {
     log.debug("REST request to get CommonDocument by type : {}", type);
     List<CommonDocument> commonDocuments = commonDocumentRepository.findByType(
