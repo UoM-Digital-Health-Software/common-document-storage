@@ -31,7 +31,8 @@ public class CommonDocument implements Serializable {
   private Integer sequence;
 
   @NotNull
-  @Column(name = "content", nullable = false)
+  @Lob
+  @Column(name = "content", nullable = false, columnDefinition = "text")
   private String content;
 
   @NotNull
